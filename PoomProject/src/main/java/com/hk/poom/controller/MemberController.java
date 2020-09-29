@@ -2,11 +2,14 @@ package com.hk.poom.controller;
 
 import java.util.Locale;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.hk.poom.dto.FindIdDTO;
+import com.hk.poom.service.MemberService;
 
 
 
@@ -14,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MemberController {
 	
+	@Autowired
+	MemberService memberService;
 	
 	@GetMapping("/poom/register/com")
 	public String registerCom( ) {
@@ -81,6 +86,14 @@ public class MemberController {
 		
 		
 		return "member/findId";
+	}
+	
+	
+	@PostMapping("/poom/find/id")
+	public String findIdPost( Model model, FindIdDTO findIdDTO) {
+		
+		model.addAttribute("findIdDTO", memberService.memberFindId(findIdDTO));
+		return "member/findIdPost";
 	}
 	
 	@GetMapping("/poom/find/pwd")

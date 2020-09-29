@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>아이디 찾기</title>
 </head>
 <body>
-아이디 찾기
+	<h1>아이디 찾기</h1>
+	
+	<form action="id" method="post">
+		이름: <input type="text" name="name">
+		<input type="submit" value="찾기">
+	</form>
 </body>
 </html>
