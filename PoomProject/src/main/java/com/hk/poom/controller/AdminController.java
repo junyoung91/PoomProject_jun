@@ -10,7 +10,7 @@ public class AdminController {
 	@GetMapping("/poom/notice/list")
 	public String noticeList( ) {
 		
-		
+		System.out.println("들어오는지");
 		return "admin/noticeList";
 	}
 	
