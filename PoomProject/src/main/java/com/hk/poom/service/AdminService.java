@@ -13,6 +13,7 @@ public class AdminService {
 	@Autowired
 	AdminMapper adminMapper;
 
+	/*
 	public List<NoticeListDTO> noticeList( ) {
 		return adminMapper.noticeList( );
 	}
@@ -44,5 +45,5 @@ public class AdminService {
 	public List<AdminPayDTO> adminPay( ) {
 		return adminMapper.adminPay( );
 	}
-	
+	*/
 }

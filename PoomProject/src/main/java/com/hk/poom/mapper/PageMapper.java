@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PageMapper {
-
+	/*
 	public MypageDTO mypage( int mno );
 	public List<MypageLikeDTO> mypageLikeList(  );
 	public List<MypageSaleDTO> mypageSaleList( AdminPayDTO adminPayDTO );
@@ -15,5 +15,5 @@ public interface PageMapper {
 	public List<MypageChatDTO> mypageChatList( MypageChatDTO mypageChatDTO );
 	public MypageDTO mypageUpdate( MypageDTO mypageDTO );
 	public OtherpageDTO otherpage( int mno );
-	
+	*/
 }

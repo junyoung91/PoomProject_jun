@@ -12,7 +12,7 @@ public class PageService {
 	
 	@Autowired
 	PageMapper pageMapper;
-	
+	/*
 	public MypageDTO mypage( int mno ) {
 		return pageMapper.mypage( mno );
 	}
@@ -44,5 +44,5 @@ public class PageService {
 	public OtherpageDTO otherpage( int mno ) {
 		return pageMapper.otherpage( mno );
 	}
-	
+	*/
 }
