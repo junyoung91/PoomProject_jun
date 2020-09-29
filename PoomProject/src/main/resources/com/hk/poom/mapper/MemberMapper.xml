@@ -5,7 +5,7 @@
 <mapper namespace="com.hk.poom.mapper.MemberMapper">
 
 <select id="memberFindId" resultType="com.hk.poom.dto.FindIdDTO">
-	select id from member where name=#{name}
+	select * from member where name=#{name}
 </select>
 
 </mapper>
