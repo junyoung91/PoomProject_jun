@@ -4,11 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hk.poom.mapper.MemberMapper">
 
-<insert id="memberRegisterCom">
-	INSERT INTO MEMBER (TYPE_M, MNO, ID, PWD, EMAIL, TEL, NAME, ADDRESS, MENT, PROF, STMT_M, CRE_DATE_M, MOD_DATE_M, SALECNT, BUYCNT) 
-   VALUES(#{TYPE_M}, member_seq.nextval, #{ID}, #{pwd}, #{email}, 0, #{name}, #{address}, #{ment}, #{prof}, #{STMT_M},sysdate , sysdate,member_seq.nextval , member_seq.nextval);
-</insert>
-
 <select id="memberFindId" resultType="com.hk.poom.dto.FindIdDTO">
 	select * from member where name=#{name}
 </select>

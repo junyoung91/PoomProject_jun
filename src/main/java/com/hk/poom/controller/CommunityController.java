@@ -10,11 +10,11 @@ public class CommunityController {
 	@GetMapping("/poom/community/list")
 	public String communityList( ) {
 		
-		return "community/comunityList";
+		return "community/communityList";
 	}
 	
 	@GetMapping("/poom/community/read")
-	public String communityRead( ) {
+	public String community( ) {
 		
 		
 		return "community/communityRead";

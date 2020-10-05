@@ -6,16 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<h1>개인 회원 등록 페이지</h1>
-<form action='com' method='post'>
-이름: <input type='text' name='mname'><br>
-이메일: <input type='text' name='email'><br>
-암호: <input type='password' name='pwd'><br>
-<input type='submit' value='추가'>
-<input type='reset' value='취소'>
-<input type='button' onclick='location.href="list"' value='리스트로'>
-</form>
-</body>
-</html>
-incu
+<jsp:include page="../include/header.jsp"></jsp:include>
+	
+	
+	<button fo></button>
+상점등록
+<jsp:include page="../include/footer.jsp"></jsp:include>

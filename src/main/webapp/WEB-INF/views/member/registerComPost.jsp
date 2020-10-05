@@ -3,12 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<jsp:include page="../include/header.jsp"></jsp:include>
 상점등록 포스트
-${id} 
-</body>
-</html>
+<jsp:include page="../include/footer.jsp"></jsp:include>

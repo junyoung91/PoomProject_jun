@@ -8,9 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 import com.hk.poom.dto.FindIdDTO;
-import com.hk.poom.dto.RegisterComDTO;
 import com.hk.poom.service.MemberService;
 
 
@@ -30,10 +28,9 @@ public class MemberController {
 	}
 	
 	@PostMapping("/poom/register/com")
-	public String registerComPost(Model model, RegisterComDTO registerComDTO ) {
+	public String registerComPost( ) {
 		
-		int retVal = memberService.memberRegisterCom( registerComDTO );
-		model.addAttribute("id", retVal);
+		
 		return "member/registerComPost";
 	}
 	
