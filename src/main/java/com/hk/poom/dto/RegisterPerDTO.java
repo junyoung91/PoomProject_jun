@@ -16,25 +16,29 @@ public class RegisterPerDTO {
 	String email;
 	//이름
 	String name;
+	//우편번호
+	String zipCode;
 	//주소
-	String address;
+	String firstAddr;
+	//상세주소
+	String secondAddr;
+	//주소참고항목
+	String extraAddr;
 	//연락처
 	int tel;
 	//멘트
 	String ment;
-	//프로필 사진
-	String prof;
 	//가입일
 	Date cre_date_m;
 	//수정일
 	Date mod_date_m;
 	//회원상태
-	boolean stmt_m;
+	int stmt_m;
 	
 	//관심 분야
 	int fav;
 	//애완동물 유무
-	boolean pet;
+	int pet;
 	
 	
 	// Getter & Setter
@@ -74,11 +78,29 @@ public class RegisterPerDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress() {
-		return address;
+	public String getZipCode() {
+		return zipCode;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+	public String getFirstAddr() {
+		return firstAddr;
+	}
+	public void setFirstAddr(String firstAddr) {
+		this.firstAddr = firstAddr;
+	}
+	public String getSecondAddr() {
+		return secondAddr;
+	}
+	public void setSecondAddr(String secondAddr) {
+		this.secondAddr = secondAddr;
+	}
+	public String getExtraAddr() {
+		return extraAddr;
+	}
+	public void setExtraAddr(String extraAddr) {
+		this.extraAddr = extraAddr;
 	}
 	public int getTel() {
 		return tel;
@@ -92,12 +114,6 @@ public class RegisterPerDTO {
 	public void setMent(String ment) {
 		this.ment = ment;
 	}
-	public String getProf() {
-		return prof;
-	}
-	public void setProf(String prof) {
-		this.prof = prof;
-	}
 	public Date getCre_date_m() {
 		return cre_date_m;
 	}
@@ -110,10 +126,10 @@ public class RegisterPerDTO {
 	public void setMod_date_m(Date mod_date_m) {
 		this.mod_date_m = mod_date_m;
 	}
-	public boolean isStmt_m() {
+	public int getStmt_m() {
 		return stmt_m;
 	}
-	public void setStmt_m(boolean stmt_m) {
+	public void setStmt_m(int stmt_m) {
 		this.stmt_m = stmt_m;
 	}
 	public int getFav() {
@@ -122,10 +138,10 @@ public class RegisterPerDTO {
 	public void setFav(int fav) {
 		this.fav = fav;
 	}
-	public boolean isPet() {
+	public int getPet() {
 		return pet;
 	}
-	public void setPet(boolean pet) {
+	public void setPet(int pet) {
 		this.pet = pet;
 	}
 	
@@ -133,9 +149,9 @@ public class RegisterPerDTO {
 	@Override
 	public String toString() {
 		return "RegisterPerDTO [type_m=" + type_m + ", mno=" + mno + ", id=" + id + ", pwd=" + pwd + ", email=" + email
-				+ ", name=" + name + ", address=" + address + ", tel=" + tel + ", ment=" + ment + ", prof=" + prof
-				+ ", cre_date_m=" + cre_date_m + ", mod_date_m=" + mod_date_m + ", stmt_m=" + stmt_m + ", fav=" + fav
-				+ ", pet=" + pet + "]";
+				+ ", name=" + name + ", zipCode=" + zipCode + ", firstAddr=" + firstAddr + ", secondAddr=" + secondAddr
+				+ ", extraAddr=" + extraAddr + ", tel=" + tel + ", ment=" + ment + ", cre_date_m=" + cre_date_m
+				+ ", mod_date_m=" + mod_date_m + ", stmt_m=" + stmt_m + ", fav=" + fav + ", pet=" + pet + "]";
 	}
 	
 }

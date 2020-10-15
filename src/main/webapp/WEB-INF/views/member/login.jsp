@@ -4,8 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
+<jsp:include page="../include/inHead.jsp"></jsp:include>
 </head>
 <jsp:include page="../include/header.jsp"></jsp:include>
-로그인
+
+	<form action="login" method="post">
+		아이디 : <input type="text" name="id"><br />
+		비밀번호 : <input type="password" name="pwd"><br />
+		<input type="submit" value="로그인">
+	</form>
+	<a href="find/id">아이디</a> / <a href="find/pwd">비밀번호</a> 찾기
+
 <jsp:include page="../include/footer.jsp"></jsp:include>
