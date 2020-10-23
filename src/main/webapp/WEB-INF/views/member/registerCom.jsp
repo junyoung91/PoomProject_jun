@@ -221,7 +221,7 @@ $(document).on("click", "#emailBtn", function(){
 	         method: "post",
 	         url: "/poom/createEmailCheck",
 	         success : function(data){
-	            if(data==null){
+	            if(data==false){
 	               alert("이메일을 입력해주세요");
 	            }else{
 	               alert("이메일이 발송되었습니다. 인증번호 확인 후 입력해주세요");
@@ -625,7 +625,7 @@ function execDaumPostcode() {
 					인증코드 :	
 		 				<input type="text" name="checkCode" id="checkCode" placeholder="인증번호">
 		 				<button type="button" id="codeBtn" onclick="">인증번호 확인</button><br/>
-		 				<div class="validation" id="checkCodeRet" style="font-size: 15px;"></div></div>
+		 				<div class="validation" id="checkCodeRet" style="font-size: 15px;"></div></div>				
 		</fieldset>
 		<fieldset style="width:700px;margin-right:1000px">	
 			<legend style="font-size:25px;"><b>사업자 정보 등록</b></legend>
@@ -633,9 +633,10 @@ function execDaumPostcode() {
 					<input type="text" name="name" placeholder="매장명"><br>
 				<label><b>사업자 번호 : </b></label>
 					<input type="text" name="brn"  placeholder="사업자 번호"><br>
-	
+				<label><b>사업자등록증 사진파일 : </b></label>
+					<input type="file" name='brn_img'><br>
 				<label><b>주소</b></label>
-            		<input type="text" id="postcode" placeholder="우편번호" name="zipCode" style="width:80px;margin-right:1px">
+            		<input type="text" id="postcode" placeholder="우편번호" name="zipCode" style="width:60px;margin-right:1px">
            			<input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
             		<input type="text" id="address" placeholder="주소" name="firstAddr"><br>
             		<input type="text" id="extraAddress" placeholder="참고항목" name="extraAddr">

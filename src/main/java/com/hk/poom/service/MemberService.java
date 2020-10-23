@@ -23,6 +23,10 @@ public class MemberService {
 		return memberMapper.memberLogin( loginDTO );
 	}
 	
+	public LoginDTO memberLoginKakao( int mno ) {
+		return memberMapper.memberLoginKakao( mno );
+	}
+	
 	public String profGet( int mno ) {
 		return memberMapper.profGet( mno );
 	}
@@ -44,6 +48,10 @@ public class MemberService {
 	public LoginDTO emailDupChk( String email ) {
 		return memberMapper.emailDupChk( email );
 	}
+	
+	public int mnoCheck() {
+		return memberMapper.mnoCheck();
+	}
 
 	public FindIdDTO memberFindId( FindIdDTO findIdDTO ) {
 		return memberMapper.memberFindId( findIdDTO );
@@ -56,6 +64,16 @@ public class MemberService {
 	
 	public FindPwdDTO memberFindPwd( FindPwdDTO findPwdDTO ) {
 		return memberMapper.memberFindPwd( findPwdDTO );
+	}
+	
+	public int memberPwdUpdate( FindPwdDTO findPwdDTO ) {
+		
+		return memberMapper.memberPwdUpdate( findPwdDTO );
+	}
+	
+	public int brnUpload( ProfUploadDTO profUploadDTO ) {
+		int retVal = memberMapper.brnUpload( profUploadDTO );
+		return retVal;
 	}
 
 }

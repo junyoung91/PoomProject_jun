@@ -15,16 +15,18 @@ import com.hk.poom.dto.RegisterPerDTO;
 public interface MemberMapper {
 
 	public LoginDTO memberLogin( LoginDTO loginDTO );
+	public LoginDTO memberLoginKakao( int mno );
 	public String profGet( int mno );
 	public int memberRegisterPer( RegisterPerDTO registerPerDTO );
 	public int memberRegisterCom( RegisterComDTO registerComDTO );
 	public LoginDTO idDupChk( String id );
 	public LoginDTO emailDupChk( String email );
+	public int mnoCheck();
 	public int profUpload( ProfUploadDTO profUploadDTO );
 	public FindIdDTO memberFindId( FindIdDTO findIdDTO );
 	public FindPwdDTO memberFindPwd( FindPwdDTO findPwdDTO );
 	public int addEmailCheck(EmailCheck emailCheck);
 	public String getDbCode(String email);
-
-	
+	public int memberPwdUpdate(FindPwdDTO findPwdDTO);
+	public int brnUpload( ProfUploadDTO profUploadDTO );
 }

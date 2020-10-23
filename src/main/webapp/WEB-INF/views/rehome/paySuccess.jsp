@@ -5,7 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<jsp:include page="../include/inHead.jsp"></jsp:include>
 </head>
 <jsp:include page="../include/header.jsp"></jsp:include>
-마이페이지 포스트 
+<p>결제 성공</p>
+<a href="list">리스트로 가기</a>
 <jsp:include page="../include/footer.jsp"></jsp:include>
