@@ -24,6 +24,7 @@ public class ProfUploadDTO {
 		this.dbSaveName = dbSaveName;
 	}
 	
+	
 	public String getBrnName() {
 		return brnName;
 	}
@@ -34,6 +35,7 @@ public class ProfUploadDTO {
 	public String toString() {
 		return "ProfUploadDTO [mno=" + mno + ", dbSaveName=" + dbSaveName + ", brnName=" + brnName + "]";
 	}
+	
 	
 	
 }

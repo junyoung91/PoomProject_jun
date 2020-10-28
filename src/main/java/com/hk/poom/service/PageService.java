@@ -77,6 +77,4 @@ public class PageService {
 		return pageMapper.otherpage( mno );
 	}
 	
-	
-	
 }

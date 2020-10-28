@@ -123,7 +123,6 @@ public class MemberController {
 		
 		return "member/registerComPost";
 	}
-
 	
 	
 	
@@ -203,7 +202,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/poom/login")
-	public String loginPost( HttpServletRequest request, HttpSession session, LoginDTO loginDTO ) {	//, @RequestParam("mno") int mno
+	public String loginPost( HttpSession session, LoginDTO loginDTO ) {	//, @RequestParam("mno") int mno
 		//logger.info("MemberController_Post_/poom/login 실행");
 		//logger.info("로그인할 member = " + loginDTO.toString());
 		LoginDTO loginMember = new LoginDTO();
@@ -238,7 +237,7 @@ public class MemberController {
 		
 		session.invalidate();
 		
-		return "member/logout";
+		return "redirect:/poom";
 	}
 	
 	@GetMapping("/poom/login/kakao")
@@ -282,6 +281,7 @@ public class MemberController {
 		
 		return "member/findPwd";
 	}
+	
 	@PostMapping("/poom/find/pwd")
 	public String findPwd(Model model, FindPwdDTO findPwdDTO ) {
 		
@@ -305,6 +305,14 @@ public class MemberController {
 		emailService.send(subject, sb.toString(), "ydp12341234@gmail.com", findPwdDTO.getEmail());
 
 		return "member/findPwdPost";
+	}
+	
+	@PostMapping("/poom/delete")
+	public String deletePost( @RequestParam("mno") int mno, @RequestParam("type_m") int type_m ) {
+		//logger.info("MemberController_Post_/poom/delete 실행");
+		memberService.memberDelete(type_m, mno);
+		
+		return "redirect:/poom/logout";
 	}
 	
 

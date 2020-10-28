@@ -2,7 +2,11 @@ package com.hk.poom.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import com.hk.poom.dto.FindIdDTO;
 import com.hk.poom.dto.FindPwdDTO;
@@ -18,6 +22,8 @@ public class MemberService {
 	@Autowired 
 	MemberMapper memberMapper;
 	
+	@Autowired
+	DataSourceTransactionManager transactionManager;	
 
 	public LoginDTO memberLogin( LoginDTO loginDTO ) {
 		return memberMapper.memberLogin( loginDTO );
@@ -57,11 +63,6 @@ public class MemberService {
 		return memberMapper.memberFindId( findIdDTO );
 	}
 	
-	public int profUpload( ProfUploadDTO profUploadDTO ) {
-		int retVal = memberMapper.profUpload( profUploadDTO );
-		return retVal;
-	}
-	
 	public FindPwdDTO memberFindPwd( FindPwdDTO findPwdDTO ) {
 		return memberMapper.memberFindPwd( findPwdDTO );
 	}
@@ -71,9 +72,35 @@ public class MemberService {
 		return memberMapper.memberPwdUpdate( findPwdDTO );
 	}
 	
+	public int profUpload( ProfUploadDTO profUploadDTO ) {
+		int retVal = memberMapper.profUpload( profUploadDTO );
+		return retVal;
+	}
+	
 	public int brnUpload( ProfUploadDTO profUploadDTO ) {
 		int retVal = memberMapper.brnUpload( profUploadDTO );
 		return retVal;
+	}
+	@Transactional
+	public int memberDelete( int type_m, int mno ) {
+		TransactionStatus txStatus = transactionManager.getTransaction( new DefaultTransactionDefinition() );
+		int retVal1;
+		int retVal2;
+		try {
+			retVal1 = memberMapper.memberDelete( mno );
+			if ( type_m==1 ) {	// 개인 회원 탈퇴
+				retVal2 = memberMapper.memberDeletePer( mno );
+			} else if ( type_m==2 ) {	// 업체 회원 탈퇴
+				retVal2 = memberMapper.memberDeleteCom( mno );
+			} else {	// 그 외 오류...?
+				retVal2 = -1;
+			}
+		} catch (Exception e) { 
+			transactionManager.rollback(txStatus);
+			return 0;
+		}
+		transactionManager.commit( txStatus );
+		return (retVal1 + retVal2);
 	}
 
 }
