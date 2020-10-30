@@ -9,7 +9,7 @@ public class CommunityListDTO {
 	//소통 카테고리
 	String cateCode;
 	//소통
-		String cateCodeRef;
+	String cateCodeRef;
 	//게시글 번호
 	int bno;   
 	//소통글번호 
@@ -19,7 +19,9 @@ public class CommunityListDTO {
 	//게시글작성자 
 	String id_writer;  
 	//작성일 
-	Date mod_date_b;      
+	Date mod_date_b;
+	//소통글 사진1
+	String img_c1;
 	//사진유무체크 
 	boolean img_chk;      
 	//리플갯수 
@@ -28,6 +30,9 @@ public class CommunityListDTO {
 	int viewCnt;
 	//추천수
 	int likeCnt;
+	//회원번호
+	int mno;
+	
 	public String getCateName() {
 		return cateName;
 	}
@@ -76,6 +81,12 @@ public class CommunityListDTO {
 	public void setMod_date_b(Date mod_date_b) {
 		this.mod_date_b = mod_date_b;
 	}
+	public String getImg_c1() {
+		return img_c1;
+	}
+	public void setImg_c1(String img_c1) {
+		this.img_c1 = img_c1;
+	}
 	public boolean isImg_chk() {
 		return img_chk;
 	}
@@ -100,13 +111,21 @@ public class CommunityListDTO {
 	public void setLikeCnt(int likeCnt) {
 		this.likeCnt = likeCnt;
 	}
+	
+	public int getMno() {
+		return mno;
+	}
+	public void setMno(int mno) {
+		this.mno = mno;
+	}
 	@Override
 	public String toString() {
 		return "CommunityListDTO [cateName=" + cateName + ", cateCode=" + cateCode + ", cateCodeRef=" + cateCodeRef
 				+ ", bno=" + bno + ", cno=" + cno + ", title=" + title + ", id_writer=" + id_writer + ", mod_date_b="
-				+ mod_date_b + ", img_chk=" + img_chk + ", replyCnt=" + replyCnt + ", viewCnt=" + viewCnt + ", likeCnt="
-				+ likeCnt + "]";
+				+ mod_date_b + ", img_c1=" + img_c1 + ", img_chk=" + img_chk + ", replyCnt=" + replyCnt + ", viewCnt="
+				+ viewCnt + ", likeCnt=" + likeCnt + ", mno=" + mno + "]";
 	}
+
 
 	
 }

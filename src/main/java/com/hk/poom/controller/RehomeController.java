@@ -295,11 +295,11 @@ public class RehomeController {
 
    @GetMapping("/poom/rehome/read")
    public String rehomeRead(@RequestParam("bno") int bno, @RequestParam("mno") int mno, Model model, HttpSession session) {
-      logger.info("bno=" + bno);
-      // 글쓴이 정보 -> MyInterceptor에서 사용
-      session.setAttribute("writerMno", mno);
-      model.addAttribute("rehomeRead",rehomeService.rehomeRead(bno));
-      return "rehome/rehomeRead";
+	   logger.info("bno=" + bno);
+	   // 글쓴이 정보 -> MyInterceptor에서 사용
+	   session.setAttribute("writerMno", mno);
+	   model.addAttribute("rehomeRead",rehomeService.rehomeRead(bno));
+	   return "rehome/rehomeRead";
    }
  
    @GetMapping("/poom/rehome/pay")

@@ -11,7 +11,7 @@
 
 <%-- 	<img style="border-radius:20px" src="${pageContext.request.contextPath }/resources/img/baseProf.png" alt="" width="40px" height="40px"> --%>
 	<img src="${prof}" alt="" width="100px" height="100px">
-	${name}님, 회원가입이 완료되었습니다! (알럿처럼 띄우기!)
+	<p>${name}님, 회원가입이 완료되었습니다! (알럿처럼 띄우기!)</p>
 		
 <script>
 	function loadFunc() {
